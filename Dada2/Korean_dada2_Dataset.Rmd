@@ -1,0 +1,96 @@
+---
+title: "Dada2_ Korean-Dataset"
+author: "Akinsuyi Oluwamayowa"
+date: '2022-07-14'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Input Data
+```{r path}
+library(knitr)
+library(rmarkdown)
+install.packages("BiocManager")
+BiocManager::install("dada2")
+install.packages(Dada2)
+library(dada2)
+library(phyloseq)
+library(Rcpp)
+library(ShortRead)
+BiocManager::install("BiocParallel")
+library(BiocParallel)
+path = "/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/osteoporosis_korean_fastq" 
+list.files(path)
+# Forward and reverse fastq filenames have format: SAMPLENAME = _1.fastq and _2.fastq respectively
+fnFs <- sort(list.files(path, pattern=".fastq", full.names = TRUE))
+```
+
+#Apply the core sample inference algorithm to the filtered and trimmed sequence data.
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+# Extract sample names, assuming filenames have format: SAMPLENAME_XXX.fastq
+sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
+plotQualityProfile(fnFs[1:2])
+```
+
+# Place filtered files in filtered/ subdirectory, Filter and Trim
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+filtFs <- file.path(path, "filtered", paste0(sample.names, "_1_filt.fastq.gz"))
+names(filtFs) <- sample.names
+#out <- filterAndTrim(fnFs, filtFs,  truncLen= 0, truncQ=2, trimLeft = 10)
+out <- filterAndTrim(fnFs, filtFs, maxN=0, maxEE=2, truncQ=2, trimLeft=21, rm.phix=TRUE,
+              compress=TRUE, multithread=TRUE )
+head(out)
+```
+Learn The Error Rates
+## The plotErrors functions is used for sanity checks, as it shows the error rates for each possible transition from A -C or A-G
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+errF <- learnErrors(filtFs, multithread=TRUE)
+plotErrors(errF, nominalQ=TRUE)
+```
+
+
+#Apply the core sample inference algorithm to the filtered and trimmed sequence data.
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+filtFs <- filtFs[file.exists(filtFs)]
+dadaFs <- dada(filtFs, err=errF, multithread=TRUE)
+#Inspecting the returned dada-class object
+dadaFs
+```
+#Construction of the Amplicon Sequence Variant Table(ASV)
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+seqtab3 <- makeSequenceTable(dadaFs)
+#Check the dimension of the seqtab
+dim(seqtab3)
+#Inspect the distribution of sequence length IN seqtab
+table(nchar(getSequences(seqtab3)))
+seqtab3
+```
+
+
+# Remove Chimeras from the seqtab.nochim matrix
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+seqtab.nochim3 <- removeBimeraDenovo(seqtab3, method="consensus", multithread=TRUE, verbose=TRUE)
+class(seqtab.nochim3)
+#Check the dimension of the new seqtab.nochim matrix
+dim(seqtab.nochim3)
+sum(seqtab.nochim3)/sum(seqtab3)
+seqtab.nochim3 
+```
+
+
+# Assign taxonomy
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+taxa_rdp <- assignTaxonomy(seqtab.nochim3, "/Users/if-mcs-1247c/Desktop/Osteoporosis/rdp_train_set_18.fa.gz", multithread=TRUE)
+View(taxa_rdp)
+
+```
+#Save the DADA2 objects as RDS
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+saveRDS(seqtab.nochim3, "/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/seqtab.nochim3")
+saveRDS(taxa_rdp, "/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/taxa_rdp_korea.rds")
+``` 
+
+
+

@@ -1,0 +1,948 @@
+---
+title: "Osteoporosis_paper_analysis"
+author: "Akinsuyi Oluwamayowa"
+date: "2022-11-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Load packages
+```{r cars}
+library(phyloseq)
+library(microbiome)
+library(ggplot2)
+library(ggpubr)
+library(microbiomeMarker)
+library(data.table)
+library(MMUPHin)
+library(magrittr)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(ggpubr)
+library(moments)
+library(rstatix)
+library(pwr)
+```
+
+
+#####Load wang et al 2017 data
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+seqtab = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang_et\ al_2017_dataset/seqtab.nochim2.rds")
+dim(seqtab)
+taxa = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang_et\ al_2017_dataset/taxa_rdp.rds")          
+dim(taxa)
+map=  read.csv("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang_et\ al_2017_dataset/wang_metadata_2017.csv")
+View(map)
+dim(seqtab)
+
+#####Set working directory
+setwd("/Users/if-mcs-1247c/Desktop/OP-Analysis/Figures")
+
+
+###Make a phyloseq Object
+ps <- phyloseq(otu_table(seqtab, taxa_are_rows=FALSE),
+tax_table(taxa))
+row.names(map) = map$X.Sample_ID
+sample_data(ps) = sample_data(map) 
+ps
+
+###Agglomerate Phyloseq Object at Genus level
+ps_newb = phyloseq::tax_glom(ps, "Genus", NArm =FALSE)
+View(tax_table(ps_newb))
+
+## Extract Otu_table and Tax_table
+Otu_new = otu_table(ps_newb)
+View(Otu_new)
+
+Taxa_new =tax_table(ps_newb)
+View(Taxa_new)
+
+###Transpose OTU table
+seqtabe = t(Otu_new)
+dim(seqtabe)
+View(seqtabe)
+
+###Merge OTU_table and Tax table
+k = cbind(Taxa_new,seqtabe)
+ View(k)
+dim(k)
+
+
+#### Make the rows which is the sequence a column, so it can be removed from the dataframe
+k = as.data.frame(k)
+k_new<- tibble::rownames_to_column(k, "row_names")
+View(k_new)
+
+#Remove the row_names column
+k_newa = k_new[, -1]
+View(k_newa)
+
+```
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+### Change the input files #################################################### wang 2022
+seqtab2 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang\ et\ al._2022/seqtabnochim.rds")
+taxa2 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang\ et\ al._2022/taxa_rdp.rds")          
+map2 <- read.csv("/Users/if-mcs-1247c/Desktop/Osteoporosis/wang\ et\ al._2022/OP_wang_2022_map.csv")
+###############################################################################
+dim(taxa2)
+View(map2)
+
+###Make a phyloseq Object
+ps2 <- phyloseq(otu_table(seqtab2, taxa_are_rows=FALSE),
+               tax_table(taxa2))
+row.names(map2) = map2$X.Sample_ID
+sample_data(ps2) = sample_data(map2) 
+ps2
+
+
+##Agglomerate the at Genus Level
+ps2_newb = phyloseq::tax_glom(ps2, "Genus", NArm =FALSE)
+View(tax_table(ps2_newb))
+
+## Extract the OTU and Taxa table 
+Taxa_new2 =tax_table(ps2_newb)
+View(Taxa_new2)
+dim(Taxa_new2)
+
+Otu_new2= otu_table(ps2_newb)
+dim(Otu_new2)
+
+###Transpose the OTU_table
+seqtabe2 = t(Otu_new2)
+dim(seqtabe2)
+View(seqtabe2)
+
+### Merge the Taxa table and otu_table
+u = cbind(Taxa_new2,seqtabe2)
+View(u)
+dim(u)
+
+
+#### Make Make the rows which is the sequence a column, so it can be removed from the dataframe
+u = as.data.frame(u)
+u_new<- tibble::rownames_to_column(u, "row_names")
+View(u_new)
+###Remove the row_names column
+u_newa = u_new[, -1]
+View(u_newa)
+dim(u_newa)
+```
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+## load the input files #################################################### korean dataset
+seqtab3 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/seqtab.nochim3")
+taxa3 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/taxa_rdp_korea.rds")          
+map3 <- read.csv("/Users/if-mcs-1247c/Desktop/Osteoporosis/Korean_Osteoporosis_dataset/Osteoporosis_mapfile_new_f.csv") 
+View(map3)
+
+###Make a phyloseq Object
+ps3 <- phyloseq(otu_table(seqtab3, taxa_are_rows=FALSE),
+                tax_table(taxa3))
+row.names(map3) = map3$X.SampleID
+sample_data(ps3) = sample_data(map3) 
+ps3
+View(tax_table(ps3))
+
+##Agglomerate at Genus Level
+ps3_newb = phyloseq::tax_glom(ps3, "Genus", NArm =FALSE)
+
+##Extract otu and tax table
+Taxa_new3 =tax_table(ps3_newb)
+View(Taxa_new3)
+dim(Taxa_new3)
+
+Otu_new3= otu_table(ps3_newb)
+dim(Otu_new3)
+
+###Transpose the OTU table
+seqtabe3 = t(Otu_new3)
+dim(seqtabe3)
+View(seqtabe3)
+
+##Merge taxa table and Otu table
+s = cbind(Taxa_new3,seqtabe3)
+View(s)
+dim(s)
+
+##Make the rows which is the sequence a column, so it can be removed from the dataframe
+s = as.data.frame(s)
+s_new <- tibble::rownames_to_column(s, "row_names")
+View(s_new)
+##Remove the column 1
+s_newa = s_new[, -1]
+View(s_newa)
+
+
+### Change the input files #################################################### qu wang dataset
+seqtab4 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Quwang\ _dataset/seqtabnochim_qi.rds")
+taxa4 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Quwang\ _dataset/taxa_qirdb.rds")          
+map4 <- read.csv("/Users/if-mcs-1247c/Desktop/Osteoporosis/Quwang\ _dataset/xu_metadata1.csv")              
+###############################################################################
+
+###Make a phyloseq Object
+ps4 <- phyloseq(otu_table(seqtab4, taxa_are_rows=FALSE),
+                tax_table(taxa4))
+ps4
+
+row.names(map4) = map4$X.Sample_ID
+sample_data(ps4) = sample_data(map4) 
+ps4
+View(tax_table(ps4))
+
+##Agglomerate at Genus Level
+ps4_newa = phyloseq::tax_glom(ps4, "Genus", NArm =FALSE)
+View(tax_table(ps4_newa))
+
+#####Extract the Tax and Otu table
+Taxa_new4 =tax_table(ps4_newa)
+View(Taxa_new4)
+dim(Taxa_new4)
+
+Otu_new4= otu_table(ps4_newa)
+dim(Otu_new4)
+
+###### Transpose the OTU_table
+seqtabe4 = t(Otu_new4)
+dim(seqtabe4)
+View(seqtabe4)
+
+######Merge the Tax_table and OTU table
+o = cbind(Taxa_new4,seqtabe4)
+View(o)
+dim(o)
+
+
+#### Make the rows which is the sequence a column, so it can be removed from the dataframe
+o = as.data.frame(o)
+o_new<- tibble::rownames_to_column(o, "row_names")
+View(o_new)
+
+###Remove the row_names column
+o_newa = o_new[, -1]
+View(o_newa)
+```
+
+####### Load Chein et al., 2021 dataset
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+### Change the input files #################################################### 
+seqtab5 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Chein_2021/seqtab.rds")
+taxa5 = readRDS("/Users/if-mcs-1247c/Desktop/Osteoporosis/Chein_2021/taxa4_rdp.rds")          
+map5 <- read.csv("/Users/if-mcs-1247c/Desktop/Osteoporosis/Chein_2021/Meta_data.csv")              
+
+
+###Make a phyloseq Object
+ps5 <- phyloseq(otu_table(seqtab5, taxa_are_rows=FALSE),
+                tax_table(taxa5))
+
+ps5
+
+row.names(map5) = map5$X.Sample_ID
+sample_data(ps5) = sample_data(map5) 
+ps5
+View(tax_table(ps5))
+sample_names(ps5)
+
+##Agglomerate at Genus Level
+ps5_newa = phyloseq::tax_glom(ps5, "Genus", NArm =FALSE)
+View(otu_table(ps5_newa))
+
+###Extract OTU and Tax table 
+Taxa_new5 =tax_table(ps5_newa)
+View(Taxa_new5)
+dim(Taxa_new5)
+
+Otu_new5= otu_table(ps5_newa)
+dim(Otu_new5)
+
+#####Transpose the Otu_table
+seqtabe5 = t(Otu_new5)
+dim(seqtabe5)
+View(seqtabe5)
+
+###### merge the otu and Asv table
+x = cbind(Taxa_new5,seqtabe5)
+View(x)
+dim(x)
+
+
+#### Make the rows which is the sequence a column, so it can be removed from the dataframe
+
+x = as.data.frame(x)
+x_new<- tibble::rownames_to_column(x, "row_names")
+View(x_new)
+
+###Remove the row_names column
+x_newa = x_new[, -1]
+View(x_newa)
+```
+
+Merge all the dataframe by Genus
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+###Merge all the dataframe by level of classification
+#### merge k_newa and u_newa
+dim(k_newa)
+dim(u_newa)
+merge1 = merge(k_newa,u_newa, by =c("Kingdom","Phylum", "Class", "Order","Family", "Genus"), all =TRUE)
+View(merge1)
+dim(merge1)
+
+#### merge o_newa and s_newa
+dim(o_newa)
+dim(s_newa)
+merge2 = merge(o_newa,s_newa, by =c("Kingdom","Phylum", "Class", "Order","Family", "Genus"), all =TRUE)
+View(merge2)
+dim(merge2)
+
+#### merge merge1 and merge2
+dim(merge1)
+dim(merge2)
+merge3 =merge(merge1,merge2, by =c("Kingdom","Phylum", "Class", "Order","Family", "Genus"), all =TRUE)
+dim(merge3)
+View(merge3)
+
+########## merge merge3 and x_newa
+dim(x_newa)
+dim(merge3)
+merge4 = merge(merge3,x_newa, by =c("Kingdom","Phylum", "Class", "Order","Family", "Genus"), all =TRUE)
+dim(merge4)
+View(merge4)   
+####Add rownames to the dataframe by TaxID
+
+###Add a row to the df  
+rownames(merge4) <- paste0("OTU", 1:nrow(merge4))
+View(merge4)
+dim(merge4)
+
+
+### Extract TAX table
+hh = c(1,2,3,4,5,6)
+TAX_table = merge4[,hh]
+View(TAX_table)
+dim(TAX_table)
+
+##Extract Otu_table
+OTU_TABLE = merge4[,-hh]
+View(OTU_TABLE)
+class(OTU_TABLE)
+dim(OTU_TABLE)
+
+#change NAs to Zeros
+OTU_TABLE[is.na(OTU_TABLE)] <-0
+View(OTU_TABLE)
+
+
+###convert taxtable dataframe to matrix
+Tax_table =as.matrix(TAX_table)
+dim(Tax_table)
+
+###convert otu_table dataframe to matrix
+Otu_table = as.matrix(OTU_TABLE)
+dim(Otu_table)
+class(Otu_table) <- "numeric"
+```
+## Make the Phyloseq Object
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+ps_all <- phyloseq(otu_table(Otu_table, taxa_are_rows=TRUE),
+               tax_table(Tax_table))
+ps_all
+
+##Read in sample data
+sd_new = read.csv("/Users/if-mcs-1247c/Desktop/line/lol/sd_new1.csv")
+row.names(sd_new) = sd_new$X.Sample_ID
+sample_data(ps_all) = sample_data(sd_new) 
+ps_all
+
+######Remove non bacteria reads
+ps_all= subset_taxa(ps_all, Phylum!="Cyanobacteria")
+ps_all= subset_taxa(ps_all, Family!="Mitochondria")
+ps_all
+
+
+####View the reads found in each sample
+all.reads = data.table(as(sample_data(ps_all), "data.frame"),
+                       TotalReads = sample_sums(ps_all), keep.rownames = TRUE)
+View(all.reads)
+
+data.frame = as(sample_data(ps_all), "data.frame")
+plyr::count(data.frame, "Groups")
+
+#####Rarefy the dataset
+ps_all_r= rarefy_even_depth(ps_all, sample.size = 1500, replace = FALSE)
+data.frame = as(sample_data(ps_all_r), "data.frame")
+plyr::count(data.frame, "Groups")
+
+ps_all_r
+
+```
+
+########Run batch effect correction method
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+######load Sample data and Otu table
+samp = sample_data(ps_all_r)
+otus = otu_table(ps_all_r)
+
+###### Covert to a matrix
+otus1 = as.matrix(otus)
+samp1 = as.matrix(samp)
+
+ps_all_r
+
+fit_adjust_batch <- adjust_batch(feature_abd = otus1,
+                                 batch = "Block",
+                                 covariates = "Groups",
+                                 data = samp1,
+                                 control = list(verbose = FALSE))
+
+fit_adjust_batch
+
+otus1_adj <- fit_adjust_batch$feature_abd_adj
+
+####Calculate the distance of the unadjusted and adjusted Otu table
+library(vegan, quietly = TRUE)
+D_before <- vegdist(t(otus1), method = "bray")
+D_after <- vegdist(t(otus1_adj), method = "bray")
+
+
+#####Run a permanova to confirm the Bath effect adjustment
+samp1 = as.data.frame(samp1)
+set.seed(1)
+fit_adonis_before <- adonis2(D_before ~ Block, data = samp1)
+fit_adonis_before
+
+
+fit_adonis_after <- adonis2(D_after ~ Block, data = samp1)
+fit_adonis_after
+########## That amount of variation explained by the different study(Batches) has been drastically 
+##reduced from 17% to 5%
+################
+```
+
+###Make a new phyloseq object based on the batch adjusted otu_table
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+Tax_all = (tax_table(ps_all_r))
+dim(Tax_all)
+dim(otus1_adj)
+
+ps_all_adj <- phyloseq(otu_table(otus1_adj, taxa_are_rows=TRUE),
+                       tax_table(Tax_all))
+row.names(samp1) = samp1$X.Sample_ID
+sample_data(ps_all_adj) = sample_data(samp1) 
+ps_all_adj
+
+
+######Rarefy the dataset
+library(data.table)
+all.reads = data.table(as(sample_data(ps_all_adj), "data.frame"),
+                       TotalReads = sample_sums(ps_all_adj), keep.rownames = TRUE)
+View(all.reads)
+
+set.seed(2125)
+ps_all_adj_r= rarefy_even_depth(ps_all_adj, sample.size =1493, replace = FALSE)
+data.frame = as(sample_data(ps_all_adj), "data.frame")
+plyr::count(data.frame, "Groups")
+ps_all_adj_r
+```
+
+###Taxonomic composition
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+###Convert Phyloseq object to Microeco object
+meco_dataset <- phyloseq2meco(ps_all_adj_r )
+meco_dataset
+
+### plot of top 10 taxa at Phylum level
+t3 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 10, groupmean = "Groups")
+g3 <- t3$plot_bar(others_color = "grey70", legend_text_italic = TRUE)
+k3 = g3 + theme_classic() + theme(axis.title.y = element_text(size = 18))
+k3
+
+
+### plot of top 10 taxa at Class level
+t4 <- trans_abund$new(dataset = meco_dataset, taxrank = "Class", ntaxa = 10, groupmean = "Groups")
+g4 <- t4$plot_bar(others_color = "grey70", legend_text_italic = FALSE)
+k4 = g4+ theme_classic() + theme(axis.title.y = element_text(size = 18))
+k4
+
+### plot of top 10 taxa at Order level
+t5 <- trans_abund$new(dataset = meco_dataset, taxrank = "Order", ntaxa = 10, groupmean = "Groups")
+g5 <- t5$plot_bar(others_color = "grey70", legend_text_italic = FALSE)
+k5 = g5 + theme_classic() + theme(axis.title.y = element_text(size = 18))
+k5
+
+
+### plot of top 10 taxa at Family level
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Family", ntaxa = 10, groupmean = "Groups")
+g1 <- t1$plot_bar(legend_text_italic = T)
+g1 
+
+
+
+########PLot of top 20 taxa at Genus level
+t2 <- trans_abund$new(dataset = meco_dataset, taxrank = "Genus", ntaxa = 20, groupmean = "Groups")
+g2 <- t2$plot_bar(legend_text_italic = TRUE) 
+g3 = g2 + theme(axis.title.y = element_text(size = 18)) + scale_fill_manual(values = c("blue", "yellow", "darkgreen", "darkorchid", "darkolivegreen1", "darkblue", "violet", "firebrick", "brown4", "darkorange1", "cyan","darksalmon", "honeydew4", "lightskyblue", "darkgoldenrod1", "turquoise4", "brown1", "yellow4", "deeppink", "aliceblue", "khaki2"))
+g3
+
+
+
+#######Fig3
+
+tiff("Figure3.tiff", units = "in", width = 7, height = 7.5, res = 300)
+Fig3=ggarrange(g1,g3,
+               labels = c("A", "B"),
+               common.legend = F,
+               font.label = list(size = 6),
+               nrow = 2)
+Fig3
+dev.off()
+
+
+
+#######Supplmentary Figure 3
+tiff("Supp. Fig3.tiff", units = "in", width = 6, height = 7.5, res = 300)
+Fig3=ggarrange(k4,k5,
+               labels = c("A", "B"),
+               common.legend = F,
+               font.label = list(size = 6),
+               nrow = 2)
+Fig3
+dev.off()
+
+
+########
+```
+
+#########Calculate Power and effect size
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+#########Calculate Power and effect size
+library(vegan)
+abundance_table = otu_table(ps_all_adj_r) 
+View(abundance_table)
+abundance_table_t = t(abundance_table)
+View(abundance_table_t)
+###use the diversity function from vegan to calculate Shannon diversity
+H = diversity(abundance_table_t, "shannon")
+View(H)
+
+###make a dataframe of the shannon index
+df_H = data.frame(sample =names(H), value= H, measure=rep("Shannon", length(H)))
+View(df_H)
+dim(df_H)
+
+#Extract meta_data from phyloseq object
+sd_new_1 = sample_data(ps_all_adj_r)
+dim(sd_new_1)
+
+##### Extract just the first two columns
+sd_new_2 = sd_new_1[,c(1:2)]
+View(sd_new_2)
+
+###Merge the sample data with the shannon diversity dataframe
+combined = cbind(sd_new_2,df_H)
+View(combined)
+
+######Run shapiro test
+shapiro.test(combined$shannon)
+#data is non-normal p-value <0.05
+
+#Skewness is a measure of symmetry for a distribution.
+#The direction of skewness is given by the sign of the skewness coefficient:
+#A zero means no skewness at all (normal distribution).
+#A negative value means the distribution is negatively skewed.
+#A positive value means the distribution is positively skewed.
+
+skewness(combined$shannon)
+# -0.907 the distribution is negatively skewed
+
+#The square, x to x², has a moderate effect on distribution shape 
+#and it could be used to reduce left skewness.
+data<- combined %>%
+  mutate(sqr = shannon^2)
+shapiro.test(data$sqr)
+#p-value = 0.12 - now it has normal distribution and the t.test can be applied
+
+######## Make histogram and qq plot to confirm that the data meets assumption of normality
+
+oo = hist(data$sqr)
+
+########### qqplot
+l = qqnorm(data$sqr)
+qqline(data$sqr)
+
+
+
+theme_set(theme_bw())
+pal = "Set1"
+scale_colour_discrete <- function(palname = pal, ...) {
+  scale_colour_brewer(palette = palname, ...)
+}
+scale_fill_discrete <- function(palname = pal, ...) {
+  scale_fill_brewer(palette = palname, ...)
+}
+
+library(ggpubr)
+########### PLot Alpha diversity 
+AD = ggplot(data = data, aes(x = Groups, y = sqr, colour = Groups)) +
+  geom_boxplot(outlier.colour  = "NA") + 
+  labs(x = "", y = "Shannon Diversity")  + geom_jitter(aes(color = Groups), height = 0, width = .2) 
+AD_new  = AD + theme(axis.text.x = element_blank())  
+AD_new = AD_new + stat_compare_means(method = "t.test") + ylim(0,13)
+AD_new
+dev.off()
+t.test(sqr ~ Groups, data = data) 
+############## Based on the graph, there is no significant difference in  the shannon diversity between the OP and HC group
+
+#########Compute effect size and statistical power
+#effect size - https://www.datanovia.com/en/lessons/t-test-effect-size-using-cohens-d-measure/
+
+effect<- data %>% cohens_d(sqr ~ Groups, var.equal = TRUE)
+effect #small = 0.174
+
+### Compute power
+pwr.t.test(n = 155, d =0.2 , sig.level = 0.05, power = , type = "two.sample")
+#power = 0.42
+```
+
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+
+############Firmicutes/Bacteroidetes ratio
+ps_all_r_P <- phyloseq::tax_glom(ps_all_adj_r, "Phylum")
+##Melt the Phyloseq Object into a Dataframe
+ps_all_r_P 
+####Melt phyloseq object a dataframe
+test2 = psmelt(ps_all_r_P)
+View(test2)
+dim(test2)
+#Subset dataframe
+names(test2[,c(4,3,5,16)])
+
+test3 = test2[,c(4,3,5,16)]
+unique(test3$Phylum)
+
+#Filter dataframe to contain only Phylum firmicutes and Bacteroidetes
+test4 = test3%>% filter(Phylum =="Firmicutes"|Phylum =="Bacteroidetes")
+#unique(test3$Phylum)
+View(test4)
+
+#Change dataframe from Long to Wide
+test5 <- test4 %>%
+  pivot_wider(names_from = Phylum, 
+              values_from = Abundance)
+View(test5)
+
+#Calculate abundance ratio
+test5$F.B.ratio = test5$Firmicutes/test5$Bacteroidetes
+View(test5)
+dim(test5)
+
+##Remove Inf
+test6 = test5[-which(test5$F.B.ratio %in% Inf),]
+View(test6)
+dim(test6)
+
+### Check if the data is normally distributed 
+shapiro.test(test6$F.B.ratio)
+
+##### Transform data to meet normal distribution
+data2<- test6 %>%
+  mutate(F.B_new = log10(F.B.ratio))
+
+shapiro.test(data2$F.B_new)
+
+########## confirm that the data meet normal distribution by making a histogram and qqplot  
+#####histogram
+hist(data2$F.B_new)
+
+########qqplot 
+kk  = qqnorm(data2$F.B_new)
+qqline(data2$F.B_new)
+
+
+########Histogram and qqplot looks normally distributed so we can use  the paramentric t .test
+
+theme_set(theme_bw())
+pal = "Set1"
+scale_colour_discrete <- function(palname = pal, ...) {
+  scale_colour_brewer(palette = palname, ...)
+}
+scale_fill_discrete <- function(palname = pal, ...) {
+  scale_fill_brewer(palette = palname, ...)
+}
+
+################ Boxplot showing the Firmicutes/Bacteroidetes ratio  
+f.b_all = ggplot(data = data2, aes(x = Groups, y = F.B_new, colour = Groups )) +
+  geom_boxplot(outlier.colour  = "NA") + 
+  labs(x = "", y = "Firmicutes/Bacteroidetes ratio")  + geom_jitter(aes(color = Groups), height = 0, width = .2)  + theme(axis.text.x = element_blank()) +  stat_compare_means(method ="t.test")  + ylim(0,3.6)
+f.b_all 
+
+```
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+#PIME Analysis 
+
+
+install_github("microEcology/pime")
+library(pime)
+pime.oob.error(ps_all_adj_r, "Groups")
+per_variable_obj= pime.split.by.variable(ps_all_adj_r, "Groups")
+prevalences=pime.prevalence(per_variable_obj)
+set.seed(42)
+best.prev=pime.best.prevalence(prevalences, "Groups")
+imp55 =best.prev$Importance$`Prevalence 55`
+View(imp55)
+write.csv(imp55, "/Users/luiz/Desktop/imp55/imp55.csv")
+prevalence.55= prevalences$`55`
+#########
+
+##Calculate Permanova
+df = as(sample_data(prevalence.55), "data.frame")
+ds = phyloseq::distance(prevalence.55, method = "binomial")
+permanova = adonis2(ds ~Groups, data = df, permutations = 999) 
+permanova
+
+
+#########PCOA
+theme_set(theme_bw())
+pal = "Set1"
+scale_colour_discrete <- function(palname = pal, ...) {
+  scale_colour_brewer(palette = palname, ...)
+}
+scale_fill_discrete <- function(palname = pal, ...) {
+  scale_fill_brewer(palette = palname, ...)
+}
+
+######################
+tiff("Figure4.tiff", units = "in", width = 6, height = 4, res = 300)
+met_ord = ordinate(prevalence.55, "PCoA" , "binomial")
+graph_met.75 = plot_ordination(prevalence.55, met_ord, color = "Groups", shape = "Groups") 
+y =graph_met.75 + geom_point(size = 5, alpha = 0.7) 
+y
+dev.off()
+
+######## PCOA shows distinct seperation of microbial commuinity between the OP and HC group at 55% prevalence. The result was confirmed by a PERMANOVA(R2 =0.10398, p = 0 .001). This means that 10% of the variation is explained by the groups.
+
+
+######PIME result Validation
+randomized=pime.error.prediction(ps_all_adj_r, "Groups", bootstrap = 10, parallel = TRUE, max.prev = 95)
+randomized$Plot
+
+replicated.oob.error= pime.oob.replicate(prevalences, "Groups", bootstrap = 10, parallel = TRUE)
+replicated.oob.error$Plot
+
+########Figure3
+## Supplementary Figure5
+tiff("SupplFigure5.tiff", units = "in", width = 7, height = 5, res = 300)
+Fig3=ggarrange(randomized$Plot, replicated.oob.error$Plot,
+               labels = c("A", "B"),
+               common.legend = F,
+               font.label = list(size = 12),
+               nrow = 1)
+Fig3
+dev.off()
+########
+
+
+
+library(phyloseq)
+abundance_data = otu_table(ps_all_adj_r)
+# Extract abundance data from phyloseq object
+ # Extract abundance data from phyloseq object
+ abundance_data <- as.data.frame(otu_table(ps_all_adj_r))
+dim(abundance_data)
+ taxa_data <- as.data.frame(tax_table(ps_all_adj_r))
+
+# Access the sample data from the phyloseq object
+sample_data <- sample_data(ps_all_adj_r)
+
+# Extract the "Groups" column from the sample data
+Groups <- sample_data$Groups
+Groups 
+# Convert Groups to a data frame if needed
+Groups <- as.list(Groups)
+ Groups
+ 
+
+########
+# Initialize an empty list to store results
+wilcox_results_list <- list()
+
+
+# Perform pairwise Wilcoxon test for each taxon
+ wilcox_results_list <- apply(abundance_data, 1, function(abundance_data_row) {
+   wilcox_result <- wilcox.test(abundance_data_row ~ Groups, Paired = True)
+   return(wilcox_result$p.value)
+ })
+ 
+ 
+ wilcox_results_df1 <- data.frame(Taxon = rownames(abundance_data), P_Value = wilcox_results_list)
+ View(wilcox_results_df1)
+
+ # Merge with taxa_data
+ wilcox_results_df1 <- cbind(wilcox_results_df1, taxa_data)
+ # View the results
+ View(wilcox_results_df)
+ 
+ 
+ 
+ 
+ ###########3
+ library(ggpubr)
+ 
+ ps.gen <- phyloseq::tax_glom(ps_all_adj_r, "Genus")
+View(tax_table(ps.gen))
+ ps.gen
+ ps_all_r_clr = microbiome::transform(ps.gen, 'clr')
+ps_d1 = subset_taxa(ps_all_r_clr, Genus == "Mediterraneibacter")
+ps_d1 <- phyloseq::psmelt(ps_d1) %>%
+  ggplot(data = ., aes(x = Groups, y = Abundance, colour = Groups)) +
+  geom_boxplot(outlier.colour = NA, alpha = 0.5) +  # Adjust boxplot transparency
+  facet_wrap(~ Genus) +
+  labs(x = "", y = "CLR Abundance") +
+  geom_jitter(aes(color = Groups), height = 0, width = 0.2, alpha = 0.5) +  # Adjust point transparency
+  theme(axis.text.x = element_blank(),
+        axis.title.y = element_blank(),  # Remove y-axis label
+        strip.text = element_text(size = 20, face = "italic")) +  # Italicize facet labels only
+  stat_compare_means()
+ps_d1
+
+#####################33
+ps_d2 = subset_taxa(ps_all_r_clr, Genus == "Agathobaculum")
+ps_d2 <- phyloseq::psmelt(ps_d2) %>%
+  ggplot(data = ., aes(x = Groups, y = Abundance, colour = Groups)) +
+  geom_boxplot(outlier.colour = NA, alpha = 0.5) +  # Adjust boxplot transparency
+  facet_wrap(~ Genus) +
+  labs(x = "", y = "CLR Abundance") +
+  geom_jitter(aes(color = Groups), height = 0, width = 0.2, alpha = 0.5) +  # Adjust point transparency
+  theme(axis.text.x = element_blank(),
+        axis.title.y = element_blank(),  # Remove y-axis label
+        strip.text = element_text(size = 20, face = "italic")) +  # Italicize facet labels only
+  stat_compare_means()
+ps_d2
+
+
+
+ps_all_r_clr
+####################
+ps_d3 = subset_taxa(ps_all_r_clr, Genus == "Bacteroides")
+ps_d3 <- phyloseq::psmelt(ps_d3) %>%
+  ggplot(data = ., aes(x = Groups, y = Abundance, colour = Groups)) +
+  geom_boxplot(outlier.colour = NA, alpha = 0.5) +  # Adjust boxplot transparency
+  facet_wrap(~ Genus) +
+  labs(x = "", y = "CLR Abundance") +
+  geom_jitter(aes(color = Groups), height = 0, width = 0.2, alpha = 0.5) +  # Adjust point transparency
+  theme(axis.text.x = element_blank(),
+        strip.text = element_text(size = 20, face = "italic")) +  # Italicize facet labels only
+  stat_compare_means()
+ps_d3
+
+
+
+
+######################
+ps_d4 = subset_taxa(ps_all_r_clr, Genus == "Dorea")
+ps_d4 <- phyloseq::psmelt(ps_d4) %>%
+  ggplot(data = ., aes(x = Groups, y = Abundance, colour = Groups)) +
+  geom_boxplot(outlier.colour = NA, alpha = 0.5) +  # Adjust boxplot transparency
+  facet_wrap(~ Genus) +
+  labs(x = "", y = "CLR Abundance") +
+  geom_jitter(aes(color = Groups), height = 0, width = 0.2, alpha = 0.5) +  # Adjust point transparency
+  theme(axis.text.x = element_blank(),
+        strip.text = element_text(size = 14, face = "italic")) +  # Italicize facet labels only
+  stat_compare_means()
+ps_d4
+
+########Merge al
+
+ 
+tiff("Meta1.tiff", units = "in", width = 13, height = 7.5, res = 300)
+Figall=ggarrange(ps_d3,ps_d2,ps_d1,
+                labels = c("A", "B","C"),
+                common.legend = T,legend = "bottom", nrow = 1)
+
+Figall
+dev.off()
+
+tiff("Meta1.tiff", units = "in", width = 9, height = 7.5, res = 300)
+Fig4=ggarrange(ps_d3,ps_d2,ps_d1,
+                labels = c("A", "B","C"),
+                common.legend = T,legend = "bottom")
+ 
+Fig4
+dev.list()
+dev.off()
+
+
+
+
+
+
+
+
+######################effect size
+library(rstatix)#######################
+library(dplyr)
+ # Convert the phyloseq object to a data frame
+ x <- as.data.frame(psmelt(ps_all_r_clr))
+ View(x)
+ # Initialize an empty list to store results
+ effect_sizes <- list()
+ 
+ # Loop through each unique OTU
+ for (otu in unique(x$OTU)) {
+   # Subset the data for the current OTU
+   x_subset <- subset(x, OTU == otu)
+   
+   # Calculate effect size using wilcox_effsize
+   effect_size <- x_subset %>%
+     wilcox_effsize(Abundance ~ Groups)
+   
+   # Add the effect size results to the list
+   effect_sizes[[otu]] <- effect_size
+ }
+ 
+ # Combine the effect size results into a single data frame
+ effect_sizes_summary <- bind_rows(effect_sizes, .id = "OTU")
+ 
+ # Print the summary data frame
+View(effect_sizes_summary)
+ 
+ 
+p_effect= merge (effect_sizes_summary,wilcox_results_df)
+ 
+dim(wilcox_results_df)
+ 
+ 
+################Merge all
+
+ 
+ 
+ 
+ 
+
+
+```
+
+####### LFSE Differntial abundance
+```{r message=FALSE, warning=FALSE, paged.print=FALSE, cache=TRUE, echo = TRUE}
+############# Remove taxa not present at least 3 times in 5% of our sample in the dataset
+ps_all_adj_r_1 = filter_taxa(ps_all_adj_r, function(x) sum(x>3) > (0.07*length(x)), TRUE)
+
+##Figure4
+tiff("Figure5.tiff", units = "in", width = 6, height = 5, res = 300)
+lef_out<-run_lefse(ps_all_adj_r_1, group = "Groups", wilcoxon_cutoff = 0.075,
+                   kw_cutoff = 0.075, lda_cutoff = )
+lefse = plot_ef_bar(lef_out)
+lefse
+
+########### I change the wilcoxon cutoff to 0.075, because two important Genus(Dorea and Clostridium_Sensu_Stricto) were quite significant 0.073 and 0.075.
+```
+

@@ -1,0 +1,354 @@
+#Sample_ID	Groups	Dataset	Block	Runs	Group_name	Sample_Ido	Experiment.Title	Library.Name	Sample.Name	CITY
+SRR5136859	OP	Osteoporosis2	A	Srr5136859	OP1	Samn06191467	NA	NA	NA	Xi'an
+SRR5136860	HC	Healthy Control2	A	Srr5136860	HC1	Samn06191479	NA	NA	NA	Xi'an
+SRR5136861	OP	Osteoporosis2	A	Srr5136861	ON1	Samn06191473 	NA	NA	NA	Xi'an
+SRR5136862	OP	Osteoporosis2	A	Srr5136862	ON2	Samn06191474	NA	NA	NA	Xi'an
+SRR5136863	OP	Osteoporosis2	A	Srr5136863	ON5	Samn06191477	NA	NA	NA	Xi'an
+SRR5136864	HC	Healthy Control2	A	Srr5136864	HC2	Samn06191480	NA	NA	NA	Xi'an
+SRR5136865	HC	Healthy Control2	A	Srr5136865	HC6	Samn06191484	NA	NA	NA	Xi'an
+SRR5136866	HC	Healthy Control2	A	Srr5136866	HC3	Samn06191481	NA	NA	NA	Xi'an
+SRR5136867	OP	Osteoporosis2	A	Srr5136867	OP2	Samn06191468	NA	NA	NA	Xi'an
+SRR5136868	OP	Osteoporosis2	A	Srr5136868	OP6	Samn06191472	NA	NA	NA	Xi'an
+SRR5136869	OP	Osteoporosis2	A	Srr5136869	OP4	Samn06191670	NA	NA	NA	Xi'an
+SRR5136870	OP	Osteoporosis2	A	Srr5136870	ON3	Samn06191475	NA	NA	NA	Xi'an
+SRR5136871	HC	Healthy Control2	A	Srr5136871	HC4	Samn06191482	NA	NA	NA	Xi'an
+SRR5136872	OP	Osteoporosis2	A	Srr5136872	ON6	Samn06191478	NA	NA	NA	Xi'an
+SRR5136873	OP	Osteoporosis2	A	Srr5136873	ON4	Samn06191476	NA	NA	NA	Xi'an
+SRR5136874	HC	Healthy Control2	A	Srr5136874	HC5	Samn06191483	NA	NA	NA	Xi'an
+SRR5136875	OP	Osteoporosis2	A	Srr5136875	OP3	Samn06191469	NA	NA	NA	Xi'an
+SRR5136876	OP	Osteoporosis2	A	Srr5136876	OP5	Samn06191671	NA	NA	NA	Xi'an
+SRR10120013.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 22	NA	NA	Xi'an_b
+SRR10120014.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 21	NA	NA	Xi'an_b
+SRR10120015.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 20	NA	NA	Xi'an_b
+SRR10120016.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 19	NA	NA	Xi'an_b
+SRR10120017.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 18	NA	NA	Xi'an_b
+SRR10120018.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 17	NA	NA	Xi'an_b
+SRR10120019.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 16	NA	NA	Xi'an_b
+SRR10120020.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 15	NA	NA	Xi'an_b
+SRR10120021.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 14	NA	NA	Xi'an_b
+SRR10120022.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 1	NA	NA	Xi'an_b
+SRR10120023.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 13	NA	NA	Xi'an_b
+SRR10120024.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 12	NA	NA	Xi'an_b
+SRR10120025.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 11	NA	NA	Xi'an_b
+SRR10120026.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 10	NA	NA	Xi'an_b
+SRR10120027.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 9	NA	NA	Xi'an_b
+SRR10120028.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 8	NA	NA	Xi'an_b
+SRR10120029.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 7	NA	NA	Xi'an_b
+SRR10120030.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 6	NA	NA	Xi'an_b
+SRR10120031.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 5	NA	NA	Xi'an_b
+SRR10120032.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 4	NA	NA	Xi'an_b
+SRR10120033.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 9	NA	NA	Xi'an_b
+SRR10120034.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 3	NA	NA	Xi'an_b
+SRR10120035.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 2	NA	NA	Xi'an_b
+SRR10120036.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia male replicate 1	NA	NA	Xi'an_b
+SRR10120037.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 19	NA	NA	Xi'an_b
+SRR10120038.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 18	NA	NA	Xi'an_b
+SRR10120039.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 17	NA	NA	Xi'an_b
+SRR10120040.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 16	NA	NA	Xi'an_b
+SRR10120041.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 15	NA	NA	Xi'an_b
+SRR10120042.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 14	NA	NA	Xi'an_b
+SRR10120043.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 13	NA	NA	Xi'an_b
+SRR10120044.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 8	NA	NA	Xi'an_b
+SRR10120045.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 12	NA	NA	Xi'an_b
+SRR10120046.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 11	NA	NA	Xi'an_b
+SRR10120047.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 10	NA	NA	Xi'an_b
+SRR10120048.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 9	NA	NA	Xi'an_b
+SRR10120049.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 8	NA	NA	Xi'an_b
+SRR10120050.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 7	NA	NA	Xi'an_b
+SRR10120051.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 6	NA	NA	Xi'an_b
+SRR10120052.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 5	NA	NA	Xi'an_b
+SRR10120053.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 4	NA	NA	Xi'an_b
+SRR10120054.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 3	NA	NA	Xi'an_b
+SRR10120055.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 7	NA	NA	Xi'an_b
+SRR10120056.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 2	NA	NA	Xi'an_b
+SRR10120057.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD male replicate 1	NA	NA	Xi'an_b
+SRR10120058.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 21	NA	NA	Xi'an_b
+SRR10120059.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 20	NA	NA	Xi'an_b
+SRR10120060.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 19	NA	NA	Xi'an_b
+SRR10120061.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 18	NA	NA	Xi'an_b
+SRR10120062.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 17	NA	NA	Xi'an_b
+SRR10120063.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 16	NA	NA	Xi'an_b
+SRR10120064.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 15	NA	NA	Xi'an_b
+SRR10120065.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 14	NA	NA	Xi'an_b
+SRR10120066.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 6	NA	NA	Xi'an_b
+SRR10120067.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 13	NA	NA	Xi'an_b
+SRR10120068.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 12	NA	NA	Xi'an_b
+SRR10120069.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 11	NA	NA	Xi'an_b
+SRR10120070.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 10	NA	NA	Xi'an_b
+SRR10120071.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 9	NA	NA	Xi'an_b
+SRR10120072.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 8	NA	NA	Xi'an_b
+SRR10120073.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 7	NA	NA	Xi'an_b
+SRR10120074.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 6	NA	NA	Xi'an_b
+SRR10120075.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 5	NA	NA	Xi'an_b
+SRR10120076.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 4	NA	NA	Xi'an_b
+SRR10120077.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 5	NA	NA	Xi'an_b
+SRR10120078.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 3	NA	NA	Xi'an_b
+SRR10120079.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 2	NA	NA	Xi'an_b
+SRR10120080.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis female replicate 1	NA	NA	Xi'an_b
+SRR10120081.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 28	NA	NA	Xi'an_b
+SRR10120082.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 27	NA	NA	Xi'an_b
+SRR10120083.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 26	NA	NA	Xi'an_b
+SRR10120084.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 25	NA	NA	Xi'an_b
+SRR10120085.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 24	NA	NA	Xi'an_b
+SRR10120087.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 22	NA	NA	Xi'an_b
+SRR10120088.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 4	NA	NA	Xi'an_b
+SRR10120089.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 21	NA	NA	Xi'an_b
+SRR10120090.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 20	NA	NA	Xi'an_b
+SRR10120091.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 19	NA	NA	Xi'an_b
+SRR10120092.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 18	NA	NA	Xi'an_b
+SRR10120093.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 17	NA	NA	Xi'an_b
+SRR10120094.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 16	NA	NA	Xi'an_b
+SRR10120095.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 15	NA	NA	Xi'an_b
+SRR10120096.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 14	NA	NA	Xi'an_b
+SRR10120097.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 13	NA	NA	Xi'an_b
+SRR10120098.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 12	NA	NA	Xi'an_b
+SRR10120099.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 3	NA	NA	Xi'an_b
+SRR10120100.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 11	NA	NA	Xi'an_b
+SRR10120101.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 10	NA	NA	Xi'an_b
+SRR10120102.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 9	NA	NA	Xi'an_b
+SRR10120103.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 8	NA	NA	Xi'an_b
+SRR10120104.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 7	NA	NA	Xi'an_b
+SRR10120105.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 6	NA	NA	Xi'an_b
+SRR10120106.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 5	NA	NA	Xi'an_b
+SRR10120107.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 4	NA	NA	Xi'an_b
+SRR10120108.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 13	NA	NA	Xi'an_b
+SRR10120109.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 12	NA	NA	Xi'an_b
+SRR10120110.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 11	NA	NA	Xi'an_b
+SRR10120111.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 3	NA	NA	Xi'an_b
+SRR10120112.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 10	NA	NA	Xi'an_b
+SRR10120113.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 9	NA	NA	Xi'an_b
+SRR10120114.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 8	NA	NA	Xi'an_b
+SRR10120115.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 7	NA	NA	Xi'an_b
+SRR10120116.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 6	NA	NA	Xi'an_b
+SRR10120117.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 5	NA	NA	Xi'an_b
+SRR10120118.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 4	NA	NA	Xi'an_b
+SRR10120119.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 3	NA	NA	Xi'an_b
+SRR10120120.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 2	NA	NA	Xi'an_b
+SRR10120121.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteoporosis male replicate 1	NA	NA	Xi'an_b
+SRR10120122.fastq	OP	Osteoporosis1	B	NA	NA	NA	16S rRNA-Seq of osteopenia female replicate 2	NA	NA	Xi'an_b
+SRR10120123.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 2	NA	NA	Xi'an_b
+SRR10120124.fastq	HC	Healthy Control1	B	NA	NA	NA	16S rRNA-Seq of normal BMD female replicate 1	NA	NA	Xi'an_b
+SRR17519993	OP	Osteoporosis3	C	SRR175199931	NA	NA	NA	Patient14	NA	Asan
+SRR17519994	OP	Osteoporosis3	C	SRR17519994	NA	NA	NA	Patient13	NA	Asan
+SRR17519995	OP	Osteoporosis3	C	SRR17519995	NA	NA	NA	Patient12	NA	Asan
+SRR17519996	OP	Osteoporosis3	C	SRR17519996	NA	NA	NA	Patient11	NA	Asan
+SRR17519997	HC	Healthy Control3	C	SRR17519997	NA	NA	NA	Control8	NA	Asan
+SRR17519998	OP	Osteoporosis3	C	SRR17519998	NA	NA	NA	Patient10	NA	Asan
+SRR17519999	OP	Osteoporosis3	C	SRR17519999	NA	NA	NA	Patient9	NA	Asan
+SRR17520001	OP	Osteoporosis3	C	SRR17520001	NA	NA	NA	Patient7	NA	Asan
+SRR17520002	OP	Osteoporosis3	C	SRR17520002	NA	NA	NA	Patient6	NA	Asan
+SRR17520003	OP	Osteoporosis3	C	SRR17520003	NA	NA	NA	Patient5	NA	Asan
+SRR17520004	OP	Osteoporosis3	C	SRR17520004	NA	NA	NA	Patient4	NA	Asan
+SRR17520005	OP	Osteoporosis3	C	SRR17520005	NA	NA	NA	Patient3	NA	Asan
+SRR17520006	OP	Osteoporosis3	C	SRR17520006	NA	NA	NA	Patient2	NA	Asan
+SRR17520007	OP	Osteoporosis3	C	SRR17520007	NA	NA	NA	Patient1	NA	Asan
+SRR17520008	HC	Healthy Control3	C	SRR17520008	NA	NA	NA	Control7	NA	Asan
+SRR17520009	HC	Healthy Control3	C	SRR17520009	NA	NA	NA	Control60	NA	Asan
+SRR17520010	HC	Healthy Control3	C	SRR17520010	NA	NA	NA	Control59	NA	Asan
+SRR17520011	HC	Healthy Control3	C	SRR17520011	NA	NA	NA	Control58	NA	Asan
+SRR17520012	HC	Healthy Control3	C	SRR17520012	NA	NA	NA	Control57	NA	Asan
+SRR17520013	HC	Healthy Control3	C	SRR17520013	NA	NA	NA	Control56	NA	Asan
+SRR17520014	HC	Healthy Control3	C	SRR17520014	NA	NA	NA	Control55	NA	Asan
+SRR17520015	HC	Healthy Control3	C	SRR17520015	NA	NA	NA	Control54	NA	Asan
+SRR17520016	HC	Healthy Control3	C	SRR17520016	NA	NA	NA	Control53	NA	Asan
+SRR17520017	HC	Healthy Control3	C	SRR17520017	NA	NA	NA	Control52	NA	Asan
+SRR17520018	HC	Healthy Control3	C	SRR17520018	NA	NA	NA	Control51	NA	Asan
+SRR17520019	HC	Healthy Control3	C	SRR17520019	NA	NA	NA	Control6	NA	Asan
+SRR17520020	HC	Healthy Control3	C	SRR17520020	NA	NA	NA	Control50	NA	Asan
+SRR17520021	HC	Healthy Control3	C	SRR17520021	NA	NA	NA	Control49	NA	Asan
+SRR17520022	HC	Healthy Control3	C	SRR17520022	NA	NA	NA	Control48	NA	Asan
+SRR17520023	HC	Healthy Control3	C	SRR17520023	NA	NA	NA	Control47	NA	Asan
+SRR17520024	HC	Healthy Control3	C	SRR17520024	NA	NA	NA	Control46	NA	Asan
+SRR17520025	HC	Healthy Control3	C	SRR17520025	NA	NA	NA	Control45	NA	Asan
+SRR17520026	HC	Healthy Control3	C	SRR17520026	NA	NA	NA	Control44	NA	Asan
+SRR17520027	HC	Healthy Control3	C	SRR17520027	NA	NA	NA	Control43	NA	Asan
+SRR17520028	HC	Healthy Control3	C	SRR17520028	NA	NA	NA	Control42	NA	Asan
+SRR17520029	HC	Healthy Control3	C	SRR17520029	NA	NA	NA	Control10	NA	Asan
+SRR17520030	HC	Healthy Control3	C	SRR17520030	NA	NA	NA	Control9	NA	Asan
+SRR17520031	OP	Osteoporosis3	C	SRR17520031	NA	NA	NA	Patient16	NA	Asan
+SRR17520032	OP	Osteoporosis3	C	SRR17520032	NA	NA	NA	Patient15	NA	Asan
+SRR17520033	HC	Healthy Control3	C	SRR17520033	NA	NA	NA	Control41	NA	Asan
+SRR17520034	HC	Healthy Control3	C	SRR17520034	NA	NA	NA	Control5	NA	Asan
+SRR17520035	HC	Healthy Control3	C	SRR17520035	NA	NA	NA	Control40	NA	Asan
+SRR17520036	HC	Healthy Control3	C	SRR17520036	NA	NA	NA	Control39	NA	Asan
+SRR17520037	HC	Healthy Control3	C	SRR17520037	NA	NA	NA	Control38	NA	Asan
+SRR17520038	HC	Healthy Control3	C	SRR17520038	NA	NA	NA	Control37	NA	Asan
+SRR17520039	HC	Healthy Control3	C	SRR17520039	NA	NA	NA	Control36	NA	Asan
+SRR17520040	HC	Healthy Control3	C	SRR17520040	NA	NA	NA	Control35	NA	Asan
+SRR17520041	HC	Healthy Control3	C	SRR17520041	NA	NA	NA	Control34	NA	Asan
+SRR17520042	HC	Healthy Control3	C	SRR17520042	NA	NA	NA	Control33	NA	Asan
+SRR17520043	HC	Healthy Control3	C	SRR17520043	NA	NA	NA	Control32	NA	Asan
+SRR17520044	HC	Healthy Control3	C	SRR17520044	NA	NA	NA	Control31	NA	Asan
+SRR17520045	HC	Healthy Control3	C	SRR17520045	NA	NA	NA	Control4	NA	Asan
+SRR17520046	HC	Healthy Control3	C	SRR17520046	NA	NA	NA	Control30	NA	Asan
+SRR17520047	HC	Healthy Control3	C	SRR17520047	NA	NA	NA	Control29	NA	Asan
+SRR17520048	HC	Healthy Control3	C	SRR17520048	NA	NA	NA	Control28	NA	Asan
+SRR17520049	HC	Healthy Control3	C	SRR17520049	NA	NA	NA	Control27	NA	Asan
+SRR17520050	HC	Healthy Control3	C	SRR17520050	NA	NA	NA	Control26	NA	Asan
+SRR17520051	HC	Healthy Control3	C	SRR17520051	NA	NA	NA	Control25	NA	Asan
+SRR17520052	HC	Healthy Control3	C	SRR17520052	NA	NA	NA	Control24	NA	Asan
+SRR17520053	HC	Healthy Control3	C	SRR17520053	NA	NA	NA	Control23	NA	Asan
+SRR17520054	HC	Healthy Control3	C	SRR17520054	NA	NA	NA	Control22	NA	Asan
+SRR17520055	HC	Healthy Control3	C	SRR17520055	NA	NA	NA	Control21	NA	Asan
+SRR17520056	HC	Healthy Control3	C	SRR17520056	NA	NA	NA	Control3	NA	Asan
+SRR17520057	HC	Healthy Control3	C	SRR17520057	NA	NA	NA	Control20	NA	Asan
+SRR17520058	HC	Healthy Control3	C	SRR17520058	NA	NA	NA	Control19	NA	Asan
+SRR17520059	HC	Healthy Control3	C	SRR17520059	NA	NA	NA	Control18	NA	Asan
+SRR17520060	HC	Healthy Control3	C	SRR17520060	NA	NA	NA	Control17	NA	Asan
+SRR17520061	HC	Healthy Control3	C	SRR17520061	NA	NA	NA	Control16	NA	Asan
+SRR17520062	HC	Healthy Control3	C	SRR17520062	NA	NA	NA	Control15	NA	Asan
+SRR17520063	HC	Healthy Control3	C	SRR17520063	NA	NA	NA	Control14	NA	Asan
+SRR17520064	HC	Healthy Control3	C	SRR17520064	NA	NA	NA	Control13	NA	Asan
+SRR17520065	HC	Healthy Control3	C	SRR17520065	NA	NA	NA	Control12	NA	Asan
+SRR17520066	HC	Healthy Control3	C	SRR17520066	NA	NA	NA	Control11	NA	Asan
+SRR17520067	HC	Healthy Control3	C	SRR17520067	NA	NA	NA	Control2	NA	Asan
+SRR17520068	HC	Healthy Control3	C	SRR17520068	NA	NA	NA	Control1	NA	Asan
+SRR14320148	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0384	Wuhan
+SRR14320149	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0379	Wuhan
+SRR14320150	HC	Healthy Control4	D	NA	NA	NA	NA	NA	W0297	Wuhan
+SRR14320151	HC	Healthy Control4	D	NA	NA	NA	NA	NA	W0282	Wuhan
+SRR14320152	HC	Healthy Control4	D	NA	NA	NA	NA	NA	W0266	Wuhan
+SRR14320153	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0218	Wuhan
+SRR14320154	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0209	Wuhan
+SRR14320155	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0190	Wuhan
+SRR14320156	HC	Healthy Control4	D	NA	NA	NA	NA	NA	W0096	Wuhan
+SRR14320157	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	W0066	Wuhan
+SRR14320158	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0047	Wuhan
+SRR14320159	HC	Healthy Control4	D	NA	NA	NA	NA	NA	W0041	Wuhan
+SRR14320160	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0558	Wuhan
+SRR14320161	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0439	Wuhan
+SRR14320162	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0436	Wuhan
+SRR14320163	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0411	Wuhan
+SRR14320164	HC	Healthy Control4	D	NA	NA	NA	NA	NA	T0410	Wuhan
+SRR14320165	HC	Healthy Control4	D	NA	NA	NA	NA	NA	T0391	Wuhan
+SRR14320166	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0373	Wuhan
+SRR14320167	HC	Healthy Control4	D	NA	NA	NA	NA	NA	T0362	Wuhan
+SRR14320168	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0272	Wuhan
+SRR14320169	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0025	Wuhan
+SRR14320170	HC	Healthy Control4	D	NA	NA	NA	NA	NA	T0212	Wuhan
+SRR14320171	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0195	Wuhan
+SRR14320172	HC	Healthy Control4	D	NA	NA	NA	NA	NA	T0155	Wuhan
+SRR14320173	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0042	Wuhan
+SRR14320174	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	T0038	Wuhan
+SRR14320175	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Q0148	Wuhan
+SRR14320176	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Q0124	Wuhan
+SRR14320177	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	Q0123	Wuhan
+SRR14320178	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Q0101	Wuhan
+SRR14320179	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Q0096	Wuhan
+SRR14320180	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0242	Wuhan
+SRR14320181	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0223	Wuhan
+SRR14320182	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0211	Wuhan
+SRR14320183	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0209	Wuhan
+SRR14320184	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0207	Wuhan
+SRR14320185	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0198	Wuhan
+SRR14320186	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0195	Wuhan
+SRR14320187	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0194	Wuhan
+SRR14320188	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0012	Wuhan
+SRR14320189	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0193	Wuhan
+SRR14320190	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0176	Wuhan
+SRR14320191	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0169	Wuhan
+SRR14320192	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0166	Wuhan
+SRR14320193	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0165	Wuhan
+SRR14320194	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0158	Wuhan
+SRR14320195	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0157	Wuhan
+SRR14320196	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0156	Wuhan
+SRR14320197	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0138	Wuhan
+SRR14320198	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0122	Wuhan
+SRR14320199	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0008	Wuhan
+SRR14320200	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0103	Wuhan
+SRR14320201	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0090	Wuhan
+SRR14320202	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0088	Wuhan
+SRR14320203	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0085	Wuhan
+SRR14320204	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0077	Wuhan
+SRR14320205	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0075	Wuhan
+SRR14320206	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0073	Wuhan
+SRR14320207	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0066	Wuhan
+SRR14320208	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0059	Wuhan
+SRR14320209	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0235	Wuhan
+SRR14320210	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0234	Wuhan
+SRR14320211	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	Z0230	Wuhan
+SRR14320212	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0197	Wuhan
+SRR14320213	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0194	Wuhan
+SRR14320214	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0060	Wuhan
+SRR14320215	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	Z0033	Wuhan
+SRR14320216	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0024	Wuhan
+SRR14320217	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0361	Wuhan
+SRR14320218	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0358	Wuhan
+SRR14320219	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0356	Wuhan
+SRR14320220	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0355	Wuhan
+SRR14320221	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0354	Wuhan
+SRR14320222	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0349	Wuhan
+SRR14320223	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0345	Wuhan
+SRR14320224	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0333	Wuhan
+SRR14320225	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0330	Wuhan
+SRR14320226	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0325	Wuhan
+SRR14320227	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0022	Wuhan
+SRR14320228	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0324	Wuhan
+SRR14320229	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0323	Wuhan
+SRR14320230	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0322	Wuhan
+SRR14320231	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0321	Wuhan
+SRR14320232	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0314	Wuhan
+SRR14320233	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0308	Wuhan
+SRR14320234	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0306	Wuhan
+SRR14320235	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0302	Wuhan
+SRR14320236	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0294	Wuhan
+SRR14320237	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0285	Wuhan
+SRR14320238	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0021	Wuhan
+SRR14320239	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0282	Wuhan
+SRR14320240	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0279	Wuhan
+SRR14320241	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0278	Wuhan
+SRR14320242	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0277	Wuhan
+SRR14320243	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0272	Wuhan
+SRR14320244	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0267	Wuhan
+SRR14320245	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0262	Wuhan
+SRR14320246	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0261	Wuhan
+SRR14320247	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0258	Wuhan
+SRR14320248	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0256	Wuhan
+SRR14320249	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0015	Wuhan
+SRR14320250	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0252	Wuhan
+SRR14320251	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0249	Wuhan
+SRR14320252	HC	Healthy Control4	D	NA	NA	NA	NA	NA	Z0001	Wuhan
+SRR14320253	HC	Healthy Control4	D	NA	NA	NA	NA	NA	D0053	Wuhan
+SRR14320254	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0006	Wuhan
+SRR14320255	OP	Osteoporosis4	D	NA	NA	NA	NA	NA	D0004	Wuhan
+SRR11735465	HC	NA	E	NA	NA	NA	NA	NA	D0006	Wenzhou
+SRR11735466	HC	NA	E	NA	NA	NA	NA	NA	D0007	Wenzhou
+SRR11735467	HC	NA	E	NA	NA	NA	NA	NA	D0008	Wenzhou
+SRR11735468	HC	NA	E	NA	NA	NA	NA	NA	D0009	Wenzhou
+SRR11735469	HC	NA	E	NA	NA	NA	NA	NA	D0010	Wenzhou
+SRR11735471	OP	NA	E	NA	NA	NA	NA	NA	D0011	Wenzhou
+SRR11735472	HC	NA	E	NA	NA	NA	NA	NA	D0012	Wenzhou
+SRR11735473	OP	NA	E	NA	NA	NA	NA	NA	D0013	Wenzhou
+SRR11735474	OP	NA	E	NA	NA	NA	NA	NA	D0014	Wenzhou
+SRR11735475	OP	NA	E	NA	NA	NA	NA	NA	D0015	Wenzhou
+SRR11735476	OP	NA	E	NA	NA	NA	NA	NA	D0016	Wenzhou
+SRR11735477	OP	NA	E	NA	NA	NA	NA	NA	D0017	Wenzhou
+SRR11735478	OP	NA	E	NA	NA	NA	NA	NA	D0018	Wenzhou
+SRR11735479	OP	NA	E	NA	NA	NA	NA	NA	D0019	Wenzhou
+SRR11735480	OP	NA	E	NA	NA	NA	NA	NA	D0020	Wenzhou
+SRR11735481	OP	NA	E	NA	NA	NA	NA	NA	D0021	Wenzhou
+SRR11735482	OP	NA	E	NA	NA	NA	NA	NA	D0022	Wenzhou
+SRR11735483	HC	NA	E	NA	NA	NA	NA	NA	D0023	Wenzhou
+SRR11735484	OP	NA	E	NA	NA	NA	NA	NA	D0024	Wenzhou
+SRR11735485	OP	NA	E	NA	NA	NA	NA	NA	D0025	Wenzhou
+SRR11735486	OP	NA	E	NA	NA	NA	NA	NA	D0026	Wenzhou
+SRR11735487	OP	NA	E	NA	NA	NA	NA	NA	D0027	Wenzhou
+SRR11735488	OP	NA	E	NA	NA	NA	NA	NA	D0028	Wenzhou
+SRR11735489	OP	NA	E	NA	NA	NA	NA	NA	D0029	Wenzhou
+SRR11735490	OP	NA	E	NA	NA	NA	NA	NA	D0030	Wenzhou
+SRR11735491	OP	NA	E	NA	NA	NA	NA	NA	D0031	Wenzhou
+SRR11735492	OP	NA	E	NA	NA	NA	NA	NA	D0032	Wenzhou
+SRR11735493	OP	NA	E	NA	NA	NA	NA	NA	D0033	Wenzhou
+SRR11735494	HC	NA	E	NA	NA	NA	NA	NA	D0034	Wenzhou
+SRR11735495	OP	NA	E	NA	NA	NA	NA	NA	D0035	Wenzhou
+SRR11735496	OP	NA	E	NA	NA	NA	NA	NA	D0036	Wenzhou
+SRR11735497	HC	NA	E	NA	NA	NA	NA	NA	D0037	Wenzhou
+SRR11735498	HC	NA	E	NA	NA	NA	NA	NA	D0038	Wenzhou
+SRR11735499	HC	NA	E	NA	NA	NA	NA	NA	D0039	Wenzhou
+SRR11735500	HC	NA	E	NA	NA	NA	NA	NA	D0040	Wenzhou
+SRR11735501	HC	NA	E	NA	NA	NA	NA	NA	D0041	Wenzhou
+SRR11735502	HC	NA	E	NA	NA	NA	NA	NA	D0042	Wenzhou
+SRR11735503	HC	NA	E	NA	NA	NA	NA	NA	D0043	Wenzhou
+SRR11735504	HC	NA	E	NA	NA	NA	NA	NA	D0044	Wenzhou
+SRR11735505	HC	NA	E	NA	NA	NA	NA	NA	D0045	Wenzhou
+SRR11735506	HC	NA	E	NA	NA	NA	NA	NA	D0046	Wenzhou
